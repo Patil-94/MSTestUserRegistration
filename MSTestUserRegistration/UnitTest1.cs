@@ -20,9 +20,9 @@ namespace MSTestUserRegistration
         /// Validate Password
         /// </summary>
         [TestMethod]
-        [DataRow("6ank")]
-        [DataRow("123Mm")]
-        [DataRow("545grr")]
+        [DataRow("Anki@13")]
+        [DataRow("Abnkiyt&j")]
+        [DataRow("Schin##")]
 
         public void Given__Valid_Password_ShouldReturnTrue(string validPass)
         {
@@ -40,7 +40,7 @@ namespace MSTestUserRegistration
         /// passing invalid Password patterns should return invalid Password
         /// </summary>
         [TestMethod]
-        [DataRow("Ana")]
+        [DataRow("ana")]
         [DataRow("ankiya")]
         [DataRow("asdf")]
 
