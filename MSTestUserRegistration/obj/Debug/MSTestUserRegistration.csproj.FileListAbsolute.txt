@@ -1,0 +1,17 @@
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\MSTestUserRegistration.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\MSTestUserRegistration.pdb
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\UserRegistrationMSTest.exe
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\UserRegistrationMSTest.pdb
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\UserRegistrationMSTest.exe.config
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\obj\Debug\MSTestUserRegistration.csprojAssemblyReference.cache
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\obj\Debug\MSTestUserRegistration.csproj.CoreCompileInputs.cache
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\obj\Debug\MSTestUserRegistration.csproj.CopyComplete
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\obj\Debug\MSTestUserRegistration.dll
+C:\Users\Radha\source\repos\UserRegistrationMSTest\MSTestUserRegistration\obj\Debug\MSTestUserRegistration.pdb
