@@ -9,12 +9,13 @@ namespace UserRegistrationMSTest
 {
     public class UserDetail
     {
-        //Regular expression patterns for EmailId
-        public static string mailIDPattern = "^([a-z]{3,})([.]{0,1}[a-z]*)@([a-z]{2}).([a-z]{2})([.]{1}[a-z]{2}){0,1}$";
+        //Regular expression patterns for mobile number
+        public static string mobileNumberPattern = "^91\\s[1-9]{1}[0-9]{9}$";
 
         //Validation of  all the details
-        public Func<string, string> ValidateEmail = x => Regex.IsMatch(x, mailIDPattern) ? "Valid mailID" :
-         throw new UserException(UserException.ExceptionType.INVALID_EMAIL_ID, "Invalid email id");
+        public Func<string, string> ValidateMobileNumber = x => Regex.IsMatch(x, mobileNumberPattern) ? "Valid mobile number" :
+           throw new UserException(UserException.ExceptionType.INVALID_MOBILE_NUMBER, "Invalid mobile number");
+
 
     }
 }

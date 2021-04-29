@@ -15,9 +15,9 @@ namespace UserRegistrationMSTest
 
             UserDetail pattern = new UserDetail();// crating object of userdetail class
 
-            Console.WriteLine("Enter Email ID:");
-            string emailID = Console.ReadLine();
-            Console.WriteLine(pattern.ValidateEmail(emailID));
+            Console.WriteLine("Enter Mobile Number:");
+            string mobileNumber = Console.ReadLine();
+            Console.WriteLine(pattern.ValidateMobileNumber(mobileNumber));
             Console.Read();
         }
     }
