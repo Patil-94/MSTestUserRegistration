@@ -17,46 +17,45 @@ namespace MSTestUserRegistration
         }
 
         /// <summary>
-        /// Validate first name
+        /// Validate Last name
         /// </summary>
         [TestMethod]
-        [DataRow("Ankita")]
-        [DataRow("Rani")]
-        [DataRow("Bajaj")]
-        [DataRow("Sachin")]
-        [DataRow("Raj")]
-        [DataRow("Ashwin")]
+        [DataRow("Khairnar")]
+        [DataRow("Patil")]
+        [DataRow("Aher")]
+        [DataRow("Shelke")]
 
-        public void Given_FirstName_StartsWithCapital_MinThreeCharacter_ShouldReturnTrue(string name)
+
+        public void Given_LasttName_StartsWithCapital_MinThreeCharacter_ShouldReturnTrue(string name)
         {
             try
             {
-                string result = userDetailsPattern.ValidateFirstName(name);
+                string result = userDetailsPattern.ValidateLastName(name);
             }
             catch (UserException e)
             {
-                Assert.AreEqual("Valid First Name", e.Message);
+                Assert.AreEqual("Valid Last Name", e.Message);
             }
         }
 
         ///// <summary>
-        ///// Test Method to Invalidate first name
+        ///// Test Method to Invalidate Last name
         ///// </summary>
         [TestMethod]
-        [DataRow("pRIYANSHU")]
-        [DataRow("sHIVAM")]
-        [DataRow("aNSHU")]
+        [DataRow("kHairnar")]
+        [DataRow("pAtil")]
+        [DataRow("aHER")]
 
 
-        public void GivenFirstName_IfAll_LettersAreCapital_AndMinThreeCharacters_ShouldReturnFalse(string invalidFirstName)
+        public void GivenLasttName_IfAll_LettersAreCapital_AndMinThreeCharacters_ShouldReturnFalse(string invalidLastName)
         {
             try
             {
-                string result = userDetailsPattern.ValidateFirstName(invalidFirstName);
+                string result = userDetailsPattern.ValidateLastName(invalidLastName);
             }
             catch (UserException e)
             {
-                Assert.AreEqual("Invalid First Name", e.Message);
+                Assert.AreEqual("Invalid Last Name", e.Message);
             }
         }
     }
