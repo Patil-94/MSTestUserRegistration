@@ -21,8 +21,8 @@ namespace MSTestUserRegistration
         /// </summary>
         [TestMethod]
         [DataRow("Ankitaana")]
-        [DataRow("abnkiytsj")]
-        [DataRow("sachinmbh")]
+        [DataRow("Abnkiytsj")]
+        [DataRow("Schinmbh")]
 
         public void Given__Valid_Password_ShouldReturnTrue(string validPass)
         {
