@@ -69,5 +69,26 @@ namespace MSTestUserRegistration
             bool output =UserDetail.validatePassword("Anki@123");
             Assert.AreEqual(expected, output);
         }
+
+        /// <summary>
+        /// Test case for all valid and invalid emails
+        /// </summary>
+        /// <param name="email></param>
+        [DataTestMethod]
+        [DataRow("abc@yahoo.com")]
+        [DataRow("abc-100@yahoo.com")]
+        [DataRow("abc.100@yahoo.com")]
+        [DataRow("abc111@abc.com")]
+        [DataRow("abc-100@abc.net")]
+        [DataRow("abc.100@abc.com.au")]
+        [DataRow("abc@1.com")]
+        [DataRow("abc@gmail.com.com")]
+        [DataRow("abc+100@gmail.com")]
+        public void GivenValidEmailListShouldReturnsTrue(string email)
+        {
+            bool expected = true;
+            var result =UserDetail .validateEmailList(email);
+            Assert.AreEqual(expected, result);
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace UserRegistrationMSTest
 {
     public class UserDetail
     {
-        readonly string name;
+         string name;
         public static bool validateFirstName(string name) //create method validate to string
         {
             string expression = "^[A-Z]{1}[A-Za-z]{2,}$";//create pattern for firstname 
@@ -43,6 +43,12 @@ namespace UserRegistrationMSTest
             string expression = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";//create pattern for password
             Regex regexObj4 = new Regex(expression);//object of regex
             return regexObj4.IsMatch(password);  //call the IsMatch metod to determine whether a match is present
+        }
+        public static bool validateEmailList(string email)
+        {
+            String emailPattern = "^([A-Za-z\\d-_\\+]+)(\\.[A-Za-z\\d-_]+)?@([a-zA-Z\\d]+)\\.([a-zA-Z]{2,4})(\\.[A-Za-z]{2,4})?$";
+            Regex obj = new Regex(emailPattern);
+            return obj.IsMatch(email);
         }
     }
 }

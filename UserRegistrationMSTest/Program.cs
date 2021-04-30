@@ -15,7 +15,7 @@ namespace UserRegistrationMSTest
             Console.WriteLine();
 
 
-            // Console.WriteLine("Welcome to User Registration ");
+           
             Console.WriteLine("Enter First Name");
             string firstName = Console.ReadLine();
             Console.WriteLine(UserDetail.validateFirstName(firstName));
@@ -31,6 +31,14 @@ namespace UserRegistrationMSTest
             Console.WriteLine("Enter password");
             string password = Console.ReadLine();
             Console.WriteLine(UserDetail.validatePassword(password));
+
+            Console.WriteLine("-------------------Email Sample Validator-----------------");
+            Console.WriteLine();
+            //list object cration with string data type
+            List<string> emaillist = new List<string>();
+
+            EmailSamples.emailValidator(emaillist);//method call
+            Console.Read();
         }
 
     }
