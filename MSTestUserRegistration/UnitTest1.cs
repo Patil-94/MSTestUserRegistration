@@ -13,13 +13,17 @@ namespace MSTestUserRegistration
         [TestMethod]
         public void GivenFirstNameShouldReturnHappy()
         {
-            //Arrange
-          
-            bool expected = true;
-            //Act
-            bool output = UserDetail.validateFirstName("Ankita");
-            //Assert
-            Assert.AreEqual(expected, output);
+            try
+            {
+                //Act
+                bool output = UserDetail.validateFirstName("Ankita");
+            }
+
+            catch(UserRegistrationException  e)
+            {
+                //Assert
+                Assert.AreEqual("Invalid First Name,Name should be first letter capital", e.Message);
+            }
         }
 
         /// <summary>
@@ -28,9 +32,14 @@ namespace MSTestUserRegistration
         [TestMethod]
         public void GivenLastNameShouldReturnHappy()
         {
-            bool expected = true;
-            bool output = UserDetail.validateLastName("Patil");
-            Assert.AreEqual(expected, output);
+            try
+            {
+                bool output = UserDetail.validateLastName("Patil");
+            }
+            catch (UserRegistrationException e)
+            {
+                Assert.AreEqual("Invalid Last Name,Name should be first letter capital", e.Message);
+            }
         }
 
         /// <summary>
@@ -39,12 +48,17 @@ namespace MSTestUserRegistration
         [TestMethod]
         public void GivenValidEmailIdShouldReturnHappy()
         {
-            //Arrange
-            bool expected = true;
-            //Act
-            bool output = UserDetail.validateEmail("abc@gmail.com");
-           // Assert
-            Assert.AreEqual(expected, output);
+
+            try
+            {
+                //Act
+                bool output = UserDetail.validateEmail("abc@gmail.com");
+            }
+            catch (UserRegistrationException e)
+            {
+                // Assert
+                Assert.AreEqual("Invalid Email", e.Message);
+            }
         }
 
 
@@ -54,9 +68,14 @@ namespace MSTestUserRegistration
         [TestMethod]
         public void GivenValidMobileShouldReturnHappy()
         {
-            bool expected = true;
-            bool output =UserDetail.validateMobileNo("91 9146293697");
-            Assert.AreEqual(expected, output);
+            try
+            {
+                bool output = UserDetail.validateMobileNo("91 9146293697");
+            }
+            catch (UserRegistrationException e)
+            {
+                Assert.AreEqual("Invalid Mobile number,number should be predefined format", e.Message);
+            }
         }
 
         /// <summary>
@@ -65,9 +84,15 @@ namespace MSTestUserRegistration
         [TestMethod]
         public void GivenValidPasswordShouldReturnHappy()
         {
-            bool expected = true;
-            bool output =UserDetail.validatePassword("Anki@123");
-            Assert.AreEqual(expected, output);
+            try
+            {
+                bool output = UserDetail.validatePassword("Anki@123");
+            }
+            catch (UserRegistrationException e)
+            {
+                Assert.AreEqual("Invalid Password,Password should be in format", e.Message);
+            }
+
         }
 
         /// <summary>
@@ -86,9 +111,14 @@ namespace MSTestUserRegistration
         [DataRow("abc+100@gmail.com")]
         public void GivenValidEmailListShouldReturnsTrue(string email)
         {
-            bool expected = true;
-            var result =UserDetail .validateEmailList(email);
-            Assert.AreEqual(expected, result);
+            try
+            {
+                var result = UserDetail.validateEmailList(email);
+            }
+            catch (UserRegistrationException e)
+            {
+                Assert.AreEqual("Invalid Email.Email should be in format", e.Message);
+            }
         }
     }
 }
