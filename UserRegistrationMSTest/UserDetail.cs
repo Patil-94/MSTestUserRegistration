@@ -8,15 +8,22 @@ using System.Threading.Tasks;
 namespace UserRegistrationMSTest
 {
     public class UserDetail
-    {
+    { 
+        //pattern for Name,Emailid,mobileno,password
+        public static string Pattern = "^[A-Z]{1}[A-Za-z]{2,}$";
+        public static string EmailID = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.,-]+$";
+        public static string MobileNo = "^91\\s[1-9]{1}[0-9]{9}$";
+        public static string Password = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
 
-        public static bool validateFirstName(string name)
+        public  bool validateFirstName(string First_Name) //non static method and return value is bool
         {
             try
             {
-                string expression = "^[A-Z]{1}[a-z]{2,}$";
-                Regex regexObj = new Regex(expression);
-                return regexObj.IsMatch(name);
+                Regex regexObj = new Regex(Pattern);
+
+                //call the IsMatch metod to determine whether a match is present and store in result variable
+                 bool result = regexObj.IsMatch(First_Name); 
+                  return result;
             }
             catch (UserRegistrationException)
             {
@@ -24,13 +31,14 @@ namespace UserRegistrationMSTest
             }
         }
 
-        public static bool validateLastName(string name)
+        public  bool validateLastName(string Last_Name)///non static method  to validate string and return value is bool
         {
             try
-            {
-                string expression = "^[A-Z]{1}[a-z]{2,}$";
-                Regex regexObj1 = new Regex(expression);
-                return regexObj1.IsMatch(name);
+            { 
+                Regex regexObj1 = new Regex(Pattern);
+                bool result= regexObj1.IsMatch(Last_Name); //call the IsMatch metod to determine whether a match is present
+                                                           //and store in result variable
+                return result;
             }
             catch (UserRegistrationException)
             {
@@ -38,13 +46,15 @@ namespace UserRegistrationMSTest
             }
         }
 
-        public static bool validateEmail(string email)
+        public  bool validateEmail(string email)//create method
         {
             try
             {
-                string expression = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.,-]+$";
-                Regex regexObj2 = new Regex(expression);
-                return regexObj2.IsMatch(email);
+             
+                Regex regexObj2 = new Regex(EmailID);
+                bool result=regexObj2.IsMatch(email);//call the IsMatch metod to determine whether a match is present
+                                                     //and store in result variable
+                return result;
             }
             catch (UserRegistrationException)
             {
@@ -52,13 +62,15 @@ namespace UserRegistrationMSTest
             }
         }
 
-        public static bool validateMobileNo(string mobileNo)
+        public  bool validateMobileNo(string mobileNo)//create method
         {
             try
             {
-                string expression = "([+][9]{1}[1]{1}[ ])?[6-9]{1}[0-9]{9}";
-                Regex regexObj3 = new Regex(expression);
-                return regexObj3.IsMatch(mobileNo);
+               
+                Regex regexObj3 = new Regex(MobileNo);
+                bool result= regexObj3.IsMatch(mobileNo);//call the IsMatch metod to determine whether a match is present
+                                                         //and store in result variable
+                return result;
             }
             catch (UserRegistrationException)
             {
@@ -66,13 +78,14 @@ namespace UserRegistrationMSTest
             }
         }
 
-        public static bool validatePassword(string password)
+        public  bool validatePassword(string password)//creating method
         {
             try
             {
-                string expression = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
-                Regex regexObj4 = new Regex(expression);
-                return regexObj4.IsMatch(password);
+          
+                Regex regexObj4 = new Regex(Password);
+                bool result= regexObj4.IsMatch(password);//call the IsMatch metod to determine whether a match is present
+                return result;
             }
             catch (UserRegistrationException)
             {
@@ -80,21 +93,26 @@ namespace UserRegistrationMSTest
             }
         }
 
-        public static bool validateEmailList(string email)
-        {
-            try
-            {
-                String emailPattern = "^([A-Za-z\\d-_\\+]+)(\\.[A-Za-z\\d-_]+)?@([a-zA-Z\\d]+)\\.([a-zA-Z]{2,4})(\\.[A-Za-z]{2,4})?$";
-                Regex obj = new Regex(emailPattern);
-                return obj.IsMatch(email);
-            }
-            catch (UserRegistrationException)
-            {
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAILLIST, "Invalid Email.Email should be in format");
-            }
-        }
+       
+
+
+
+        /// <summary>
+        /// Using Lambda Expression
+        /// </summary>
+        public bool ValidateUserDetailFirstName (string  firstname)=> Regex.IsMatch(firstname, Pattern);
+        public bool  ValidateUserDetailLAstNAme(string Last_Name) => Regex.IsMatch(Last_Name, Pattern);
+        public  bool ValidateEMail(string email) => Regex.IsMatch(email, EmailID);
+        public bool ValidateMobile(string mobileNo) => Regex.IsMatch(mobileNo, MobileNo);
+        public bool ValidatePassword(string password) => Regex.IsMatch(password, Password);
     }
 }
+
+
+
+    
+
+
 
 
 

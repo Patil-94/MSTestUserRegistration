@@ -14,32 +14,31 @@ namespace UserRegistrationMSTest
             Console.WriteLine("-----Welcome To UserRegistrationMSTest-----");
             Console.WriteLine();
 
+            UserDetail user = new UserDetail(); //creating object of Userdetail class
 
-           
-            Console.WriteLine("Enter First Name");
-            string firstName = Console.ReadLine();
-            Console.WriteLine(UserDetail.validateFirstName(firstName));
-            Console.WriteLine("Enter Last Name");
-            string lastName = Console.ReadLine();
-            Console.WriteLine(UserDetail.validateLastName(lastName));
-            Console.WriteLine("Enter Email Address");
-            string email = Console.ReadLine();
-            Console.WriteLine(UserDetail.validateEmail(email));
-            Console.WriteLine("Enter Mobile Number");
-            string mobileNo = Console.ReadLine();
-            Console.WriteLine(UserDetail.validateMobileNo(mobileNo));
-            Console.WriteLine("Enter password");
-            string password = Console.ReadLine();
-            Console.WriteLine(UserDetail.validatePassword(password));
+            Console.Write("Enter First Name : "); //input
+            string First_Name = Console.ReadLine();//take input from user and store in first_Name variable
+            Console.WriteLine(user.validateFirstName(First_Name)); //pass firstneme variable to the validatefirstname method 
 
-            Console.WriteLine("-------------------Email Sample Validator-----------------");
-            Console.WriteLine();
-            //list object cration with string data type
-            List<string> emaillist = new List<string>();
+            Console.Write("Enter Last Name : ");
+            string Last_Name = Console.ReadLine();
+            Console.WriteLine(user.validateLastName(Last_Name));
 
-            EmailSamples.emailValidator(emaillist);//method call
+            Console.Write("Enter Email ID: ");
+            string Email_Id = Console.ReadLine();
+            Console.WriteLine(user.validateEmail(Email_Id));
+
+            Console.Write("Enter Mobile Number: ");
+            string Mobile_Number = Console.ReadLine();
+            Console.WriteLine(user.validateMobileNo(Mobile_Number));
+
+            Console.Write("Enter Paswrod: ");
+            string Pwd = Console.ReadLine();
+            Console.WriteLine(user.validatePassword(Pwd));
+
             Console.Read();
-        }
 
+        }
     }
+    
 }

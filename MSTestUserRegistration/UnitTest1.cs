@@ -7,118 +7,86 @@ namespace MSTestUserRegistration
     [TestClass]
     public class Test
     {
+        private readonly UserDetail User;
+        public Test()//parameterless constructor 
+        {
+            User = new UserDetail(); //create object
+        }
         /// <summary>
         /// Given Valid First Name should return true
         /// </summary>
         [TestMethod]
-        public void GivenFirstNameShouldReturnHappy()
+        public void validateFirstName()//method
         {
-            try
-            {
-                //Act
-                bool output = UserDetail.validateFirstName("Ankita");
-            }
+           var Result = User.validateFirstName("Ankita");
+            Assert.AreEqual(true, Result);
+        }
 
-            catch(UserRegistrationException  e)
-            {
-                //Assert
-                Assert.AreEqual("Invalid First Name,Name should be first letter capital", e.Message);
-            }
+        [TestMethod]
+        public void validateLastName()
+        {
+            var Result = User.validateLastName("Patil");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void Email_Test()
+        {
+            var Result = User.validateEmail("ankita1995@gmail.com");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void Mobile_Test()
+        {
+            var Result = User.validateMobileNo("91 9865432666");
+            Assert.AreEqual(true, Result);
+        }
+
+        [TestMethod]
+        public void Password_Test()
+        {
+            var Result = User.validatePassword("Prati@12");
+            Assert.AreEqual(true, Result);
+
         }
 
         /// <summary>
-        /// Given Valid Last Name should return true
+        /// First the name using lambda expression.
         /// </summary>
         [TestMethod]
-        public void GivenLastNameShouldReturnHappy()
+        public void FirstNameUsingLambdaExpression()
         {
-            try
-            {
-                bool output = UserDetail.validateLastName("Patil");
-            }
-            catch (UserRegistrationException e)
-            {
-                Assert.AreEqual("Invalid Last Name,Name should be first letter capital", e.Message);
-            }
+            var Result = User.validateFirstName("Anki");
+            Assert.AreEqual(true, Result);
         }
 
-        /// <summary>
-        /// Given Valid Email should return true
-        /// </summary>
         [TestMethod]
-        public void GivenValidEmailIdShouldReturnHappy()
+        public void LastNameUsingLambdaExpression()
         {
-
-            try
-            {
-                //Act
-                bool output = UserDetail.validateEmail("abc@gmail.com");
-            }
-            catch (UserRegistrationException e)
-            {
-                // Assert
-                Assert.AreEqual("Invalid Email", e.Message);
-            }
+            var Result = User.validateLastName("Patil");
+            Assert.AreEqual(true, Result);
         }
 
-
-        /// <summary>
-        /// Given Valid Mobile No should return true
-        /// </summary>
         [TestMethod]
-        public void GivenValidMobileShouldReturnHappy()
+        public void EmailUsingLambdaExpression()
         {
-            try
-            {
-                bool output = UserDetail.validateMobileNo("91 9146293697");
-            }
-            catch (UserRegistrationException e)
-            {
-                Assert.AreEqual("Invalid Mobile number,number should be predefined format", e.Message);
-            }
+            var Result = User.validateEmail("khairnar999@gmail.com");
+            Assert.AreEqual(true, Result);
         }
 
-        /// <summary>
-        /// Given Valid Password should return true
-        /// </summary>
         [TestMethod]
-        public void GivenValidPasswordShouldReturnHappy()
+        public void MobileNumberUsingLabdaExpression()
         {
-            try
-            {
-                bool output = UserDetail.validatePassword("Anki@123");
-            }
-            catch (UserRegistrationException e)
-            {
-                Assert.AreEqual("Invalid Password,Password should be in format", e.Message);
-            }
-
+            var Result = User.validateMobileNo("91 9975833272");
+            Assert.AreEqual(true, Result);
         }
 
-        /// <summary>
-        /// Test case for all valid and invalid emails
-        /// </summary>
-        /// <param name="email></param>
-        [DataTestMethod]
-        [DataRow("abc@yahoo.com")]
-        [DataRow("abc-100@yahoo.com")]
-        [DataRow("abc.100@yahoo.com")]
-        [DataRow("abc111@abc.com")]
-        [DataRow("abc-100@abc.net")]
-        [DataRow("abc.100@abc.com.au")]
-        [DataRow("abc@1.com")]
-        [DataRow("abc@gmail.com.com")]
-        [DataRow("abc+100@gmail.com")]
-        public void GivenValidEmailListShouldReturnsTrue(string email)
+        [TestMethod]
+        public void PasswordUingLambdaExpression()
         {
-            try
-            {
-                var result = UserDetail.validateEmailList(email);
-            }
-            catch (UserRegistrationException e)
-            {
-                Assert.AreEqual("Invalid Email.Email should be in format", e.Message);
-            }
+            var Result = User.validatePassword("Qwerty@123");
+            Assert.AreEqual(true, Result);
         }
     }
 }
